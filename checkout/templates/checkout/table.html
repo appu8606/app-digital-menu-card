@@ -1,0 +1,101 @@
+{% extends 'products/base.html' %} 
+{% load static %}
+ {% block content %}
+
+  <div class="container mt-5 col-md-1 ">
+    <gwd-google-ad id="gwd-ad" polite-load="">
+      <gwd-metric-configuration></gwd-metric-configuration>
+      <gwd-pagedeck class="gwd-page-container" id="pagedeck">
+        <gwd-page id="page1" class="gwd-page-wrapper gwd-page-size gwd-lightbox gwd-page-kw7o" data-gwd-width="600px" data-gwd-height="120px">
+          <div class="gwd-page-content gwd-page-size gwd-div-160w" >
+            <img src="{% static 'img/image.png' %}" class="gwd-img-8lqt">
+            <img src="{% static 'img/image_1.png' %}" class="gwd-img-26pc">
+            <img src="{% static 'img/image_2.png' %}" class="gwd-img-16qf">
+            <svg data-gwd-shape="path" preserveAspectRatio="none" viewBox="0 0 97 61.59" class="gwd-path-1ajd">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M 0.5,3.487 C 22.682,14.578 30.385,35.191 43.5,42.487 87.146,66.77 96.5,60.487 96.5,60.487 96.5,60.487 94.5,0.5 94.5,0.5 94.5,0.5 2.5,3.51 0.5,3.487"></path>
+            </svg>
+            <h1 class="gwd-h1-hzga">₹299</h1>
+            <h1 class="gwd-h1-1ar9">
+    <div><br></div><div><span class="gwd-span-1yqw">Karachi Beef Biryani - Dum Biryan</span>i</div></h1></div>
+        </gwd-page>
+      </gwd-pagedeck>
+    </gwd-google-ad>
+    <script type="text/javascript" id="gwd-init-code">
+      (function() {
+        var gwdAd = document.getElementById('gwd-ad');
+    
+        /**
+         * Handles the DOMContentLoaded event. The DOMContentLoaded event is
+         * fired when the document has been completely loaded and parsed.
+         */
+        function handleDomContentLoaded(event) {
+    
+        }
+    
+        /**
+         * Handles the WebComponentsReady event. This event is fired when all
+         * custom elements have been registered and upgraded.
+         */
+        function handleWebComponentsReady(event) {
+          // Start the Ad lifecycle.
+          setTimeout(function() {
+            gwdAd.initAd();
+          }, 0);
+        }
+    
+        /**
+         * Handles the event that is dispatched after the Ad has been
+         * initialized and before the default page of the Ad is shown.
+         */
+        function handleAdInitialized(event) {}
+    
+        window.addEventListener('DOMContentLoaded',
+          handleDomContentLoaded, false);
+        window.addEventListener('WebComponentsReady',
+          handleWebComponentsReady, false);
+        window.addEventListener('adinitialized',
+          handleAdInitialized, false);
+      })();
+    </script>
+    
+    
+    <script data-exports-type="gwd-studio-registration">function StudioExports() {
+    }</script><script type="text/gwd-admetadata">
+    {"version":1,"type":"GoogleAd","format":"","template":"Banner 3.0.0","politeload":true,"fullscreen":false,"counters":[],"timers":[],"exits":[],"creativeProperties":{"minWidth":600,"minHeight":120,"maxWidth":600,"maxHeight":120},"components":["gwd-google-ad","gwd-page","gwd-pagedeck"],"responsive":false}
+    </script>
+   
+</div>
+
+
+<div class="container mt-5">
+  <div class="col-md-3">
+    <div class="card" style="height: auto">
+  <div class="card-body">
+    <form method="POST" action="{% url 'checkout:table' %}" >
+      {% csrf_token %}
+      <label>
+  
+        <span class="float-left"><b>Enter Your Table No :</b></span>
+        <input
+          type="number"
+          id="table"
+          name="table"
+          min="1"
+          max="20"
+        />
+      </label>
+     
+      <br />
+      <button type="submit" class="btn btn-success">
+        submit table_number
+      </button>
+    </form>
+  </div>
+  
+  </div>
+  <div class="card-body">
+    <a href=" {% url 'checkout:index' %} " class="btn btn-primary float-right">Proceed to Checkout </a>
+ </div>
+  </div>
+</div>
+{% endblock %}

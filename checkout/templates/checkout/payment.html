@@ -1,0 +1,56 @@
+{% extends 'products/base.html' %} {% load crispy_forms_tags %} 
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Choose your payment option</h1>
+  </div>
+</div>
+<br />
+<h1 class="text-center">Grand Total: ₹ {{ tot }}</h1>
+<h5 class="text-center">
+  including all service charges. (no delivery charges applied)
+</h5>
+<br />
+<div class="container mt-5  text-center">
+  <h1 class="text-center">
+    <a href="{% url 'mainapp:cart-home' %}"
+    ><button class="btn btn-warning">
+      <span class="	fas fa-shopping-cart "> Go back to
+      cart</span>
+    </button></a
+  >
+</h1>
+
+<h1 class="text-center">
+  <form action="{% url 'checkout:cashonpay' %}" method="post">
+    {% csrf_token %}
+    
+  <a 
+  ><button
+    type="submit"
+    name="success"
+    value="success"
+    class="btn btn-success "
+  >
+    <span  class="fa fa-inr ">₹ Cash On Delivery</span> 
+  </button></a
+>
+</form>
+</h1>
+<h1 class="text-center">
+  <form action="{% url 'checkout:charge' %}" method="POST">
+    {% csrf_token %}
+   <script
+      src="https://checkout.stripe.com/checkout.js"
+      class=" stripe-button "
+      data-key="{{ key }}"
+      data-description="Complete your order"
+      data-amount="{{ total }}"
+      data-locale="auto"
+    ></script>
+  </form>
+</h1>
+</div>
+ 
+{% endblock %}

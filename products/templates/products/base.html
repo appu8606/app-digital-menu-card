@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+  
+  <title>Djago Ecommer | manascode.com</title>
+  <style>
+  	.card{
+  		    height: 400px;
+  	}
+  	.card-product:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden; }
+  .card-product .price-new, .card-product .price {
+    margin-right: 5px; }
+  .card-product .price-old {
+    color: #999; }
+  .card-product .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center; }
+    .card-product .img-wrap img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: cover; }
+      
+      .card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee; }
+  .card-product .action-wrap {
+    padding-top: 4px;
+    margin-top: 4px; }
+  .card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee; }
+  .card-product .title {
+    margin-top: 0; }
+  
+    .col-md-3 {
+    display: inline-block;
+    margin-left: -4px;
+}
+
+
+.card-img-top {
+    height: 30rem;
+    object-fit: cover;
+}
+
+.col-md-3 img {
+    width: 248px;
+    height: 200px;
+}
+
+body .carousel-indicator li {
+    background-color: blue;
+}
+
+body .carousel-indicators {
+    bottom: 0;
+}
+
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon {
+    background-color: blue;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: auto;
+    bottom: auto;
+    padding-top: 222px;
+}
+
+body .no-padding {
+    padding-left: 0; padding-right : 0;
+}
+    
+  </style>
+   <style>gwd-page{display:block}.gwd-inactive{visibility:hidden}</style>
+   <style>.gwd-pagedeck{position:relative;display:block}.gwd-pagedeck>.gwd-page.transparent{opacity:0}.gwd-pagedeck>.gwd-page{position:absolute;top:0;left:0;-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:transform,opacity;transition-property:transform,opacity}.gwd-pagedeck>.gwd-page.linear{transition-timing-function:linear}.gwd-pagedeck>.gwd-page.ease-in{transition-timing-function:ease-in}.gwd-pagedeck>.gwd-page.ease-out{transition-timing-function:ease-out}.gwd-pagedeck>.gwd-page.ease{transition-timing-function:ease}.gwd-pagedeck>.gwd-page.ease-in-out{transition-timing-function:ease-in-out}.linear *,.ease-in *,.ease-out *,.ease *,.ease-in-out *{-webkit-transform:translateZ(0);transform:translateZ(0)}</style>
+   <style>gwd-page.fs{border:none}</style>
+   <style type="text/css" id="gwd-lightbox-style">.gwd-lightbox{overflow:hidden}</style>
+   <style type="text/css" id="gwd-text-style">p{margin:0px}h1{margin:0px}h2{margin:0px}h3{margin:0px}</style>
+   <style type="text/css">html,body{width:100%;height:100%;margin:0px}.gwd-page-container{position:relative;width:100%;height:100%}.gwd-page-content{background-color:transparent;transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);-webkit-transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);-moz-transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);perspective:1400px;-webkit-perspective:1400px;-moz-perspective:1400px;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;position:absolute}.gwd-page-wrapper{background-color:#fff;position:absolute;transform:translateZ(0);-webkit-transform:translateZ(0);-moz-transform:translateZ(0)}.gwd-page-size{width:300px;height:250px}.gwd-div-160w{width:600px;height:120px}.gwd-page-kw7o{width:600px;height:120px}.gwd-img-8lqt{position:absolute;height:90px;width:150px;left:4px;top:28px}.gwd-img-26pc{position:absolute;height:90px;width:150px;left:194px;top:29px}.gwd-img-16qf{position:absolute;width:150px;height:90px;left:376px;top:29px}.gwd-path-1ajd{position:absolute;width:97px;left:503.5px;stroke:#000;stroke-width:1px;height:61.5896px;top:-3.51571px;fill:#070707}.gwd-h1-hzga{position:absolute;width:1px;height:37px;transform-origin:0.757813px 30.7891px 0px;-webkit-transform-origin:0.757813px 30.7891px 0px;-moz-transform-origin:0.757813px 30.7891px 0px;color:#f0eeee;left:535px;top:2px}.gwd-h1-1ar9{position:absolute;color:#f0eeee;font-size:29px;left:28px;top:-37px}.gwd-span-1yqw{color:#474444}</style>
+ 
+   <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase">(function(){/*
+   
+  Copyright The Closure Library Authors.
+  SPDX-License-Identifier: Apache-2.0
+ */
+ (window.goog=window.goog||{}).inherits=function(a,c){function b(){}b.prototype=c.prototype;a.prototype=new b;a.prototype.constructor=a};}).call(this);
+ </script>
+</head>
+<body>
+{% include 'products/navbar.html' %}
+
+    {% if messages %}
+    <div class="messages container mt-2">
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        </div>
+        {% endfor %}
+    </div>
+  {% endif %}
+    
+
+{% block content %}
+
+{% endblock %}
+
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+<script src="/static/css/js/store.js" async></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/js.cookie.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+
+</body>
+</html>

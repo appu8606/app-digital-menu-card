@@ -1,0 +1,86 @@
+{% extends 'products/base.html' %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="jumbotron">
+      <h1 style="text-align: center">ABOUT US</h1>
+      <br>
+      The four-star Europa Hotel is a jewel of the 19th century architecture, located in the strict centre of Lublin, at Krakowskie Przedmieście Street. Because of our prestigious location, we have already for 150 years been a perfect haven both for people travelling for tourist, as well as business purposes.
+
+      We have 72 comfortably equipped rooms, including two suites: The President Suite and the Ambassador Suite, with over one hundred metres of surface area, which are sure to awe even the most demanding Guests. We offer 7 rooms, where we have been preparing family and business meetings already for 15 years.
+      
+      The Europa Hotel is not merely the building but, above all, its people. We are a team of professionals, who can organise every event end-to-end.
+      
+      We have many years of experience, extensive conference facilities, as well as technical and catering equipment, and we will be more than happy to organise your meeting – both in our building, in a tent at the hotel's patio, as well as in any other place of your choosing.
+   
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="jumbotron">
+     
+    <div class="tagline" style="text-align: center"><span>It's not our <font color="red"><strong>work life</strong></font>, it's our <font color="green"><strong><em>life's work</em>.</strong></font></span></div>
+    <h3 style="color: red ; text-align: center ">About the food culture in Le cafe'</h3>
+    <br>
+    Order food & beverages online from restaurants near & around you. 
+    We deliver food from your neighborhood local joints, your favorite cafes, luxurious & elite restaurants in your area,
+     and also from chains like Dominos, KFC, Burger King, Pizza Hut, FreshMenu, Mc Donald's, Subway, Faasos, Cafe Coffee Day, Taco Bell, and more. Exciting bit?. We place no minimum order restrictions! Order in as little (or as much) as you'd like. We'll Swiggy it to you!
+
+</div>
+</div>
+
+  <head>
+   
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;  /* The height is 400 pixels */
+        width: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+   
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtJloPZK-mQnIq_9b7aL5ObdcXIH_KLxw"></script>
+    <script>
+      // In this example, we center the map, and add a marker, using a LatLng object
+      // literal instead of a google.maps.LatLng object. LatLng object literals are
+      // a convenient way to add a LatLng coordinate and, in most cases, can be used
+      // in place of a google.maps.LatLng object.
+
+      var map;
+      function initialize() {
+        var mapOptions = {
+          zoom: 8,
+          center: {lat: 9.6357, lng: 76.6063},
+
+        };
+        map = new google.maps.Map(document.getElementById('map'),
+            mapOptions);
+
+        var marker = new google.maps.Marker({
+          // The below line is equivalent to writing:
+          // position: new google.maps.LatLng(-34.397, 150.644)
+          position: {lat: 9.6357, lng: 76.6063},
+          map: map
+        });
+
+        // You can use a LatLng literal in place of a google.maps.LatLng object when
+        // creating the Marker object. Once the Marker object is instantiated, its
+        // position will be available as a google.maps.LatLng object. In this case,
+        // we retrieve the marker's position using the
+        // google.maps.LatLng.getPosition() method.
+        var infowindow = new google.maps.InfoWindow({
+          content: '<p>Marker Location:' + marker.getPosition() + '</p>'
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <div id="map"></div>
+{% endblock %}
